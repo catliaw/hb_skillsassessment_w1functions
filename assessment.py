@@ -196,16 +196,56 @@ def hometown_greeting(town, first_name, last_name):
 
 # PART THREE
 
-# 1. Write a function ``increment()`` with a nested inner function, ``add()`` 
+# 1. Write a function ``increment()`` with a nested inner function, ``add()``
 #    inside of it. The outer function should take ``x``, an integer which
 #    defaults to 1. The inner function should take ``y`` and add ``x`` and ``y`` together.
 
-# 2. Call the function ``increment()`` with x = 5. Assign what is returned to a variable name, addfive. Call 
-#    addfive with y = 5. Call again with y = 20.
+
+def increment(x=1):
+    """Function takes one integer arguments. If no argument is given,
+    the default value is 1.
+    """
+    def add(y):
+        """Nested function that adds the two integer arguments x and y together."""
+        return x + y
+
+    #   This problem is worded very confusingly to me. I'm not sure how to create a doctest
+    #   for this function because when I test it, it returns None.
+    #   I am confused because the outside function increment() only takes one argument x,
+    #   but then where does the argument y for add() come from? The add() function is supposed
+    #   to add x + y, but there is no value for y coming from the increment() function.
+
+
+# 2. Call the function ``increment()`` with x = 5. Assign what is returned to a
+#    variable name, addfive. Call addfive with y = 5. Call again with y = 20.
+
+
+    addfive = increment(5)
+
+    #   Again, I do not understand the instructions. When I call increment(5) as written
+    #   to how I understand the instructions from #1, the function returns None.
+    #   Instructions in #2 then says to call a variable addfive with y = 5. Addfive is not
+    #   a function, so it seems odd to "call" a variable.
+
 
 # 3. Make a function that takes in a number and a list of numbers. It should append
 #    the number to the list of numbers and return the list.
 
+
+def append_to_list(number, list_to_append_to):
+    """Appends a number to the end of a list.
+    Takes two arguments: a number and a list of numbers. 
+
+    For example::
+
+        >>> append_to_list(3, [1, 2, 3, 4, 5])
+        [1, 2, 3, 4, 5, 3]
+
+        >>> append_to_list(99, [342, 234, 753, 3490])
+        [342, 234, 753, 3490, 99]
+    """
+    list_to_append_to.append(number)
+    return list_to_append_to
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
 
