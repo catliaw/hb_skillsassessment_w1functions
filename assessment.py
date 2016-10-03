@@ -169,8 +169,28 @@ def full_name(first_name, last_name):
 #        from?" depending on what `is_hometown()` evaluates to.
 
 
-def hometown_greeting():
+def hometown_greeting(town, first_name, last_name):
+    """Takes three string arguments: town, first name, and last name.
+    Prints a greeting depending on whether the person is from San Jose or not.
 
+    Examples::
+
+        >>> hometown_greeting('San Jose', 'Charlie', 'Brown')
+        Hi, Charlie Brown, we're from the same place!
+
+        >>> hometown_greeting('Chicago', 'Barack', 'Obama')
+        Hi, Barack Obama, where are you from?
+
+        >>> hometown_greeting('Washington D.C.', 'Olivia', 'Pope')
+        Hi, Olivia Pope, where are you from?
+    """
+    hometown_result = is_hometown(town)
+    full_name_result = full_name(first_name, last_name)
+
+    if hometown_result is True:
+        print "Hi, {}, we're from the same place!".format(full_name_result)
+    else:
+        print "Hi, {}, where are you from?".format(full_name_result)
 
 #####################################################################
 
